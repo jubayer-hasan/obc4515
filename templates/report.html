@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/report.css">
+    <title>Firing Range Efficience - Report</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            Report of All Users
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+
+        <div class="navbar">
+            <a class="nav-content " href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content" href="/check_error">Check Error</a>
+            <a class="nav-content" href="/show_record">Show Record</a>
+            <a class="nav-content" href="/calculate_grouping">Calculate Grouping</a>
+            <a class="nav-content" href="/analysis_error">Analysis Error</a>
+            <a class="nav-content active" href="/report">Report</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+        </div>
+        <div class="content">
+            <div class="table">
+                <table>
+                    <tr>
+
+                        <th style="width: 10%;"> Ser </th>
+                        <th style="width: 15%;"> No </th>
+                        <th style="width: 10%;"> Rank </th>
+                        <th style="width: 40%;"> Name </th>
+                        <th style="width: 10%;"> Total firing count </th>
+                        <th style="width: 15%;"> View report </th>
+                    </tr>
+                    {% for i in range(0,length) %}
+                    <tr>
+                        <td> {{ i+1 }} </td>
+                        <td> {{ users[i].soinik_number }} </td>
+                        <td> {{ users[i].rank }} </td>
+                        <td> {{ users[i].name }} </td>
+                        <td> {{ users[i].total_firing_count }} </td>
+                        <td style="text-align: center;">  <a href="/show_report"><i class="fa fa-eye"></i> </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+
+                </table>
+                <div class="pagenum">
+                    <a class="numbers" href="">
+                        1
+                    </a>
+                    <a class="numbers" href="">
+                        2
+                    </a>
+                    <a class="numbers" href="">
+                        3
+                    </a>
+                    <a class="numbers" href="">
+                        4
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/profile.css">
+    <title>Firing Range Efficience - Profile</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            DashBoard
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content active" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+
+        <div class="navbar">
+            {% if super_user==True %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content" href="/check_error">Check Error</a>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% endif %}
+        </div>
+        <div class="content" >
+           <div style="margin-left: 100px;" >
+               <h5 style="margin-bottom: 10px;">No: {{ user.soinik_number }} </h5>
+               <h5 style="margin-bottom: 10px;">Rank: {{ user.rank }} </h5>
+               <h5 style="margin-bottom: 10px;">Name: {{ user.name }} </h5>
+               <h5 style="margin-bottom: 10px;">Unit: {{ user.unit }} </h5>
+           </div>
+           
+           <div>
+            <img height="200px" width="200px" style="border: 1px solid black;margin-left: 200px;" src="{{ url_for('display_picture',soinik_number=user.soinik_number,file_name=user.photo) }}">
+           </div>
+          
+        </div>
+
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

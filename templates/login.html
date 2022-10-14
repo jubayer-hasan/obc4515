@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="box">
+        <h2>LOG IN</h2>
+        <form action="/login" method="post">
+            <div class="inpgp">
+                <div class="label">
+                    User ID
+                </div>
+                <div class="inp">
+                    <input type="text" name="ID">
+                </div>
+            </div>
+            <div class="inpgp">
+                <div class="label">
+                    Password
+                </div>
+                <div class="inp">
+                    <input type="password" name="Password">
+                </div>
+            </div>
+            <button type="submit">Log in</button>
+            <div style="margin-top: 50px;">
+                <span  style="color: red; text-align: center;margin-left: 50px;">{{ msg }}</span>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

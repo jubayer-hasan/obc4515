@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/check_error.css">
+    <title>Firing Range Efficience - Check Error</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            Check Error
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="navbar">
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content active" href="/check_error">Check Error</a>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+        </div>
+        <div class="content">
+            <form action="/check_error" method="post" enctype="multipart/form-data">
+                <div class="inputgroup">
+                    <div class="label">
+                        No
+                    </div>
+                    <input type="text" name="soinik_number" placeholder="" required>
+                </div>
+                <div class="inputgroup">
+                    <div class="label">
+                        Date
+                    </div>
+                    <input type="date" name="date" placeholder="" required>
+                </div>
+                <div class="inputgroup">
+                    <div class="label">
+                        Firing RNG
+                    </div>
+                    <input type="text" name="firing_rng" placeholder="" required>
+                </div>
+
+                <button type="submit"> Start Entry</button>
+
+               
+            </form>
+
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

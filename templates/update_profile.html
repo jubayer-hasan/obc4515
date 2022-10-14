@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/update_profile.css">
+    <title>Firing Range Efficience - Update Profile</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            Update Profile
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="navbar">
+            {% if super_user==True %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content" href="/check_error">Check Error</a>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content" href="/check_record">Check Record</a>
+            <a class="nav-content active" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content" href="/check_record">Check Record</a>
+            <a class="nav-content active" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% endif %}
+        </div>
+        <div class="content"  id="form">
+            <form action="/update_profile" method="post" enctype="multipart/form-data">
+                <div class="inputgroup">
+                    <div class="label">
+                        No
+                    </div>
+                    <input type="text" name="soinik_number" placeholder="" required>
+                </div>
+                <div class="inputgroup">
+                    <div class="label">
+                        Rank
+                    </div>
+                    <input type="text" name="rank" placeholder="" required>
+                </div>
+                <div class="inputgroup">
+                    <div class="label">
+                        Name
+                    </div>
+                    <input type="text" name="name" placeholder="" required>
+                </div>
+                <div class="inputgroup">
+                    <div class="label">
+                        Unit
+                    </div>
+                    <input type="text" name="unit" placeholder="" required>
+                </div>
+                
+                <div class="inputgroup">
+                    <div class="label">
+                        Upload Photo
+                    </div>
+                    <input type="file" name="file" required>
+                </div>
+                <button type="submit"> Update Profile</button>
+                
+                <div style="margin-top: 50px;">
+                    <span  style="color: red; text-align: center;margin-left: 50px;">{{ msg }}</span>
+                </div>
+            </form>
+            {% if super_user==True %}
+            <form action="/erase_data" method="post" enctype="multipart/form-data">
+                
+                <div style="display: flex; flex-direction: row;">
+                    <div class="inputgroup">
+                        
+                        <input type="text" name="soinik_number" placeholder="No" required>
+                    </div>
+                
+                    <button style="margin-top: 15px; padding-left: 10px; padding-right: 10px;" type="submit"> Erase Data </button>
+                </div>
+                
+
+            </form>
+            {% endif %}
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

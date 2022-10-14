@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    cursor: default;
+}
+
+.box {
+    background-color: rgb(106, 173, 106);
+    height: 500px;
+    width: 300px;
+    margin: 15% auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .9);
+}
+
+.box h2 {
+    position: absolute;
+    text-align: center;
+    /* background-color: aliceblue; */
+    width: inherit;
+    top: 20%;
+}
+
+.box form {
+    display: flex;
+    /* background-color: yellowgreen; */
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: inherit;
+}
+
+.box .inpgp {
+    /* background-color: aliceblue; */
+    display: flex;
+    /* background-color: yellowgreen; */
+    /* flex-direction: column; */
+    align-content: center;
+    justify-content: space-between;
+    /* margin: 10px 0; */
+    padding: 5%;
+    width: inherit;
+}
+
+.box .label {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.box input {
+    border-radius: 10px;
+    margin-top: 5px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.box button {
+    width: 50%;
+    height: 30px;
+    margin-top: 10%;
+    align-self: center;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
+    transition: all .5s;
+}
+
+.box input:hover, .box button:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+    transition: all .5s;
+    scale: 1.1;
+}
+
+.box input:focus {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .7);
+    transition: all .5s;
+    scale: 1.1;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/check_error.css">
+    <title>Firing Range Efficience - Check Error</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            Check Error
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="navbar">
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content active" href="/check_error">Check Error</a>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+        </div>
+        <div class="content">
+            <form action="/entry" method="post" enctype="multipart/form-data">
+               
+               <h5> Give entries for no : {{ soinik_number }} </h5> 
+
+                <div class="inputgroup">
+                    <div class="label">
+                        Grouping
+                    </div>
+                    <select name="grouping" id="grouping">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="wash out">Wash Out</option>
+                      </select>
+                </div>
+                
+                <div class="inputgroup">
+                    <div class="label">
+                        Add new Picture
+                    </div>
+                    <input type="file" name="file" required>
+                </div>
+                <button type="submit"> Check Result</button>
+                <div style="margin-top: 50px;">
+                    <span  style="color: red; text-align: center;margin-left: 50px;">{{ msg }}</span>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

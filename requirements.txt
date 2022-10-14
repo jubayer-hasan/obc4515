@@ -1,0 +1,4 @@
+torch==1.12.1
+torchvision==0.13.1
+Flask==2.2.2
+Flask-SQLAlchemy==3.0.0

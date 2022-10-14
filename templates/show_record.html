@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/showrecord.css">
+    <title>Firing Range Efficience - Show Records</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            Showing Records
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+
+        <div class="navbar">
+            {% if super_user==True %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content" href="/check_error">Check Error</a>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content active" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content active" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% endif %}
+        </div>
+        <div class="content">
+            <div class="table">
+                
+               <table>
+                <tr>
+                    <th style="width: 15%;"> ser </th>
+                    <th style="width: 15%;"> No </th>
+                    <th style="width: 40%;"> Image </th>
+                    <th style="width: 15%;"> Date-Sub Label</Label> </th>
+                    <th style="width: 15%;"> Firing Range </th>
+                    <th style="width: 15%;"> Grouping </th>
+                    <th style="width: 15%;"> Error </th>
+                    
+                </tr>
+                {% for i in range(0,ln) %}
+                <tr>
+                    <td>{{ i+1 }}</td>
+                    <td>{{ records[i].soinik_number }}</td>
+                    <td> <img height="200px" width="200px" src="{{ url_for('display_image',soinik_number=records[i].soinik_number,date=records[i].date.strftime('%Y-%m-%d'),file_name=records[i].file_name) }}" >
+                    </td>
+                    <td> {{ records[i].date.strftime('%Y/%m/%d') }} - {{ records[i].sub_label }}</td>
+                    <td> {{ records[i].firing_range }} </td>
+                    <td> {{ records[i].grouping }} </td>
+                    <td> {{ records[i].error }} </td>
+                </tr>
+                {% endfor %}
+
+               </table>
+               
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

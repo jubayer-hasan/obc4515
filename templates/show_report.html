@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/showreport.css">
+    <title>Firing Range Efficience - Report</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            Report of 101010
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="navbar">
+            <a class="nav-content active" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content" href="/check_error">Check Error</a>
+            <a class="nav-content" href="/show_record">Show Record</a>
+            <a class="nav-content" href="/calculate_grouping">Calculate Grouping</a>
+            <a class="nav-content" href="/analysis_error">Analysis Error</a>
+            <a class="nav-content" href="/report">Report</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+        </div>
+        <div class="content">
+            <div class="table">
+                <table>
+                    <tr>
+                        <th style="width: 10%;"> Ser </th>
+                        <th style="width: 20%;"> Firing Card label </th>
+                        <th style="width: 15%;"> Total hit </th>
+                        <th style="width: 15%;"> Grouping </th>
+                        <th style="width: 30%;"> Error </th>
+                        <th style="width: 10%;"> View Image </th>
+                    </tr>
+                    {% for i in range(0,ln) %}
+                    <tr>
+                        <td> {{ i+1 }}</td>
+                        <td> {{ records[i].date.strftime('%Y/%m/%d') }} - {{ records[i].sub_label }}</td>
+                        <td> {{ records[i].total_hit }} </td>
+                        <td> {{ records[i].grouping }}</td>
+                        <td> {{ records[i].error }} </td>
+                        <td style="text-align: center;">  <a href="/show_report"><i class="fa fa-eye"></i> </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+            <div class="pagenum">
+                <a class="numbers" href="">
+                    1
+                </a>
+                <a class="numbers" href="">
+                    2
+                </a>
+                <a class="numbers" href="">
+                    3
+                </a>
+                <a class="numbers" href="">
+                    4
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

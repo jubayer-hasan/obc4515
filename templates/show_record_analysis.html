@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/report.css">
+    <title>Firing Range Efficience - Show Record Analysis</title>
+    <script src="https://kit.fontawesome.com/c57ecf9603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="pic">
+            
+        </div>
+        <div class="heading">
+            Showing Record Analysis
+        </div>
+        <div class="icons">
+            <div class="settings">
+                <a class="nav-content" href="/profile">Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="navbar">
+            {% if super_user==True %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/add_new_entry">Add New Entry</a>
+            <a class="nav-content" href="/check_error">Check Error</a>
+            <a class="nav-content active" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-content" href="/dashboard">Dashboard</a>
+            <br>
+            <a class="nav-content" href="/analysis_record">Analysis Record</a>
+            <a class="nav-content active" href="/check_record">Check Record</a>
+            <a class="nav-content" href="/update_profile">Update Profile</a>
+            <br>
+            <a class="nav-content signout" href="/logout">Logout</a>
+            {% endif %}
+        </div>
+        <div class="content">
+            <div class="table">
+                <table>
+                    <tr>
+
+                        <th style="width: 15%;"> No </th>
+                        <th style="width: 15%;"> From </th>
+                        <th style="width: 15%;"> to </th>
+                        <th style="width: 15%;"> Total firing count </th>
+                        <th style="width: 15%;"> Vertical Error Count </th>
+                        <th style="width: 15%;"> Horizontal Error Count </th>
+                    </tr>
+                
+                    <tr>
+                        <td> {{ soinik_number }} </td>
+                        <td> {{ from_ }} </td>
+                        <td> {{ to }} </td>
+                        <td> {{ total_firing_count }} </td>
+                        <td> {{ vertical_count }} </td>
+                        <td> {{ horizontal_count }}</td>
+                    </tr>
+                    
+
+
+                </table>
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    min-height: 10vh;
+    background-color: green;
+}
+
+.header .pic {
+    flex: 1;
+}
+
+.header .heading {
+    flex: 3;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.header .icons {
+    flex: 1;
+}
+
+.header .icons a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.body {
+    display: flex;
+    min-height: 80vh;
+}
+
+.body .navbar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(106, 173, 106);
+    cursor: default;
+    padding-top: 10px;
+}
+
+.nav-content {
+    background-color: rgb(87, 128, 87);
+    padding: 5px;
+    margin: 5px;
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
+    text-decoration: none;
+    color: black;
+}
+
+.body .nav-content {
+    background-color: rgb(87, 128, 87);
+    padding: 5px;
+    margin: 5px;
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .3);
+    text-decoration: none;
+    color: black;
+}
+
+.body .nav-content:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+
+}
+
+.body .navbar .active {
+    background-color: rgb(85, 145, 125);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+}
+
+.body .navbar .signout {
+    background-color: rgba(253, 98, 98, .5);
+}
+
+.body .navbar .signout:hover {
+    background-color: rgba(253, 98, 98, .7);
+}
+
+.body .content {
+    flex: 4;
+}
+
+.table table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 10px auto;
+
+    background-color: rgb(207, 204, 204);
+    height: 65vh;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 50px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    align-items: center;
+}
+
+.table table td, th {
+    border: 1px solid black;
+    padding: 3px;
+}
+
+.pagenum {
+    /* background-color: rgb(205, 158, 250); */
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagenum .numbers {
+    background-color: rgb(86, 145, 255);
+    color: rgb(0, 0, 0);
+    margin: 5px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+}
+
+.pagenum a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer {
+    min-height: 10vh;
+    background-color: green;
+}
